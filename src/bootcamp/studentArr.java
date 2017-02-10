@@ -68,7 +68,7 @@ public class studentArr {
             while (!repeaterInput) {
                 int userChoice = scan.nextInt();
                 if (userChoice > 2 || userChoice <= 0) {
-                    System.out.println("That data does not exist. Please try again");
+                    System.out.println("That option does not exist. Please try again");
                 } else if (userChoice == 1) {
                     System.out.println(favoriteMovie[studentID]);
                     repeaterInput = true;
