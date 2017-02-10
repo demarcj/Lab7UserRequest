@@ -42,9 +42,13 @@ public class studentArr {
         studentName[i] = "Zodd Nosferatu";        favoriteMovie[i] = "The Excorist";        hometown[i] = "Cleveland"; i++;
         studentName[i] = "Torai Dawkins";         favoriteMovie[i] = "7 Samurai";           hometown[i] = "Clinton Twp"; i++;
         studentName[i] = "John Williams";         favoriteMovie[i] = "Pulp Fiction";        hometown[i] = "St. Louis"; i++;
+
+        //Start of the data input
         do{
             boolean repeaterInput = false;
             System.out.println("Enter a number 1 - 20");
+
+            //Checks for the student's name
             while (!repeaterInput) {
                 int getID = scan.nextInt();
                 studentID = getID - 1;
@@ -52,13 +56,15 @@ public class studentArr {
                     System.out.println("That student does not exist. Please try again.");
                 } else {
                     System.out.print("Student " + (studentID + 1) + " is " + studentName[studentID] + ". ");
-                    System.out.println("What would you like to know about " + firstName(studentName[studentID]) + "?");
+                    System.out.println("What would you like to know about " + getFirstName(studentName[studentID]) + "?");
                     repeaterInput = true;
                 }
+            }//Ends the while loop for the student's name
 
-            }
             repeaterInput = false;
             System.out.println("Enter 1 for favorite movie or 2 for hometown");
+
+            //Gives information about the student's hometown or favorite movie
             while (!repeaterInput) {
                 int userChoice = scan.nextInt();
                 if (userChoice > 2 || userChoice <= 0) {
@@ -70,12 +76,16 @@ public class studentArr {
                     System.out.println(hometown[studentID]);
                     repeaterInput = true;
                 }
-            }
+            }//Ends the while loop for the student's information
+
             System.out.println("Would like to know more? Enter: Yes or No");
             repeatStudent = scan.next();
         } while(repeatStudent.equalsIgnoreCase("yes"));
+        //This loop will start program at the get student's name at the beginning
     }
-    public static String firstName(String name){
+
+    //Gets the first name in the string
+    public static String getFirstName(String name){
         return name.substring(0, name.indexOf(" "));
     }
 }
