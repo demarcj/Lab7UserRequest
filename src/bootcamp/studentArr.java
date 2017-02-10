@@ -62,19 +62,20 @@ public class studentArr {
             }//Ends the while loop for the student's name
 
             repeaterInput = false;
-            System.out.println("Enter 1 for favorite movie or 2 for hometown");
+            System.out.println("Enter movie or hometown");
 
             //Gives information about the student's hometown or favorite movie
             while (!repeaterInput) {
-                int userChoice = scan.nextInt();
-                if (userChoice > 2 || userChoice <= 0) {
-                    System.out.println("That option does not exist. Please try again");
-                } else if (userChoice == 1) {
+                String userChoice = scan.next();
+                if (userChoice.equalsIgnoreCase("hometown")) {
+                    System.out.println(hometown[studentID]);
+                    repeaterInput = true;
+                } else if (userChoice.equalsIgnoreCase("movie")) {
                     System.out.println(favoriteMovie[studentID]);
                     repeaterInput = true;
                 } else {
+                    System.out.println("That option does not exist. Please try again");
                     System.out.println(hometown[studentID]);
-                    repeaterInput = true;
                 }
             }//Ends the while loop for the student's information
 
